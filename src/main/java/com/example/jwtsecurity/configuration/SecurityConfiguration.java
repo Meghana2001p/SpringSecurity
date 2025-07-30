@@ -79,10 +79,10 @@ public class SecurityConfiguration {
 //    // 2. Inject your UserDetailsService implementation
 //only for the 1st time when the user isbeing logged in with the email and the password
     //| Step                  | Component                                              | Used? | When                                   |
-| --------------------- | ------------------------------------------------------ | ----- | -------------------------------------- |
-| Login request         | `AuthenticationProvider` (via `AuthenticationManager`) | ✅ Yes | When logging in                        |
-| JWT-protected request | `JwtFilter`                                            | ✅ Yes | Every secured request                  |
-| JWT-protected request | `AuthenticationProvider`                               | ❌ No  | Skipped because token already verified |
+// | --------------------- | ------------------------------------------------------ | ----- | -------------------------------------- |
+// | Login request         | `AuthenticationProvider` (via `AuthenticationManager`) | ✅ Yes | When logging in                        |
+// | JWT-protected request | `JwtFilter`                                            | ✅ Yes | Every secured request                  |
+// | JWT-protected request | `AuthenticationProvider`                               | ❌ No  | Skipped because token already verified |
 
     @Bean
     public AuthenticationProvider authenticationProvider() {
