@@ -76,7 +76,8 @@ public class SecurityConfiguration {
 
         return http.build();
     }
-
+//    // 2. Inject your UserDetailsService implementation
+//only for the 1st time when the user isbeing logged in with the email and the password
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -85,6 +86,7 @@ public class SecurityConfiguration {
         return authProvider;
     }
 
+   // 1. Password encoder (used in registration & authentication)
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
