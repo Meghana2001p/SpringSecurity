@@ -34,6 +34,17 @@ public class SecurityConfiguration {
     private final JwtAutheticationFilter jwtAuthFilter;
     private final EnhancedJwtAuthenticationFilter enhancedJwtAuthenticationFilter;
     private final CustomUserDetailsService customUserDetailsService;
+// | Line                          | What it means                                 |
+// | ----------------------------- | --------------------------------------------- |
+// | `@Bean`                       | Make this method available to Spring Boot     |
+// | `SecurityFilterChain`         | Define how Spring Security protects your app  |
+// | `securityMatcher(...)`        | Apply these rules only to some routes         |
+// | `csrf().disable()`            | Disable CSRF because you're using JWT         |
+// | `sessionManagement(...)`      | Use stateless tokens (no sessions)            |
+// | `authorizeHttpRequests(...)`  | Define which APIs are public or protected     |
+// | `authenticationProvider(...)` | Use your custom login logic                   |
+// | `addFilterBefore(...)`        | Check token in the request before login logic |
+// | `http.build()`                | Finish and return the security setup          |
 
     @Bean
     @Order(1)
