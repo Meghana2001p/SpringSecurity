@@ -124,3 +124,14 @@ public class SecurityConfiguration {
                 .collect(Collectors.joining(","));
     }
 }
+// 🔑 LOGIN FLOW:
+// 1. POST /auth/login
+// 2. Authenticate username/password using authenticationManager
+// 3. If valid, generate JWT and return to client
+
+// 🔐 PROTECTED REQUEST FLOW:
+// 1. GET /users/user with JWT in Authorization header
+// 2. jwtAuthFilter extracts and validates token
+// 3. Spring Security sets the user in context
+// 4. Authorization checks if user has required role
+// 5. Controller method runs
